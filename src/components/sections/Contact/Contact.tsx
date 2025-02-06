@@ -36,7 +36,10 @@ export const Contact: React.FC = () => {
       */
 
     fetch(
-      `${AWS_EMAIL_ENDPOINT}?name=${formData.name}&message=${formData.message}&email=${formData.email}`
+      `${AWS_EMAIL_ENDPOINT}?name=${formData.name}&message=${formData.message}&email=${formData.email}`,
+      {
+        method: "POST",
+      }
     )
       .then(() => {
         alert("message sent!");
