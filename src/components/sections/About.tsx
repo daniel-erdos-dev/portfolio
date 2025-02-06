@@ -1,13 +1,23 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 
 export const About: React.FC = () => {
-  const frontendSkills = ["React", "TypeScript", "NextJS", "TailwindCSS"];
-  const backendSkills = ["NodeJS", ".NET", "AWS", "Azure"];
+  const frontendSkills = [
+    "React",
+    "TypeScript",
+    "Redux",
+    "NextJS",
+    "TailwindCSS",
+    "Material UI",
+    "Angular",
+  ];
+  const backendSkills = ["ASP.NET", "NodeJS", "Express", "AWS"];
   const otherSkills = [
     "Unit Testing",
     "UI Testing",
     "Application Security",
     "Agile",
+    "Git",
+    "CI/CD",
   ];
   const languages = [
     "Hungarian - native",
@@ -28,7 +38,27 @@ export const About: React.FC = () => {
           </h2>
 
           <div className="rounded-xl p-8 border-white/10 border transition-all">
-            <p className="text-gray-300 mb-6">TODO Some short info about me</p>
+            <p className="text-gray-300 mb-6">
+              I first dipped my toes into coding and web development in 2015,
+              and over the years, I’ve worn many hats—working in different
+              roles, exploring a variety of technologies, and gaining experience
+              in both frontend and backend development, as well as automation
+              testing. I thrive on learning, constantly pushing myself to
+              improve, and I bring strong communication skills, a proactive
+              mindset, and a team-oriented approach to my work. With experience
+              in both large-scale applications and fast-paced MVP projects, I’ve
+              developed a keen ability to adapt, iterate quickly, and build
+              solutions that are both functional and user-friendly. I also have
+              extensive experience working remotely. In 2023, I embraced a new
+              challenge and moved to Valencia, Spain, where I explored
+              solopreneurship in a different creative field—portrait, branding,
+              and product photography, as well as videography. After returning
+              to Budapest in 2024 and briefly working as a videographer and
+              video editor for a marketing agency, I found myself drawn back to
+              IT. By mid-to-late 2024, I began transitioning back into
+              development, refreshing my knowledge, and diving into new
+              technologies with renewed enthusiasm.
+            </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="rounded-xl p-6 hover:-translate-y-1  transition-all">

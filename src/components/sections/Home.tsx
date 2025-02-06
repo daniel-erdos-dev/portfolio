@@ -13,7 +13,11 @@ export const Home: React.FC = () => {
           </h1>
 
           <p className="text-gray-400 text-lg mb-8 max-w-lg mx-auto">
-            Description about me, who I am what I do TODO
+            I'm a web developer based in Budapest, Hungary, passionate about
+            building fast, intuitive, and visually appealing websites and
+            applications. I focus on performance, security, and seamless user
+            experiences—crafting digital solutions that are not just functional,
+            but truly enjoyable to use.
           </p>
           <div className="flex justify-center space-x-4">
             <a
