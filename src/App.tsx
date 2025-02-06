@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { LoadingScreen } from "./components/LoadingScreen";
 import "./index.css";
-import { Navbar } from "./components/Navbar";
-import { MobileMenu } from "./components/MobileMenu";
-import { Home } from "./components/sections/Home";
-import { About } from "./components/sections/About";
-import { Projects } from "./components/sections/Projects";
-import { Contact } from "./components/sections/Contact";
+import { Navbar } from "./components/menus/Navbar";
+import { MobileMenu } from "./components/menus/MobileMenu";
+import { About } from "./components/sections/About/About";
+import { Home } from "./components/sections/Home/Home";
+import { Projects } from "./components/sections/Projects/Projects";
+import { Contact } from "./components/sections/Contact/Contact";
 
 export const App: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);

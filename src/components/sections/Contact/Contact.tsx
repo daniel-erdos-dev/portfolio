@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { RevealOnScroll } from "../RevealOnScroll";
 import emailjs from "emailjs-com";
+import { RevealOnScroll } from "../../RevealOnScroll";
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({

@@ -1,4 +1,5 @@
 import { SetStateAction, useEffect } from "react";
+import { NavbarMenuItem } from "./NavbarMenuItem";
 
 export const Navbar: React.FC<NavbarProps> = ({
   isMenuOpen,
@@ -26,30 +27,10 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            <a
-              href="#home"
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              Home
-            </a>
-            <a
-              href="#about"
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              About
-            </a>
-            <a
-              href="#projects"
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              Projects
-            </a>
-            <a
-              href="#contact"
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              Contact
-            </a>
+            <NavbarMenuItem menuName="Home" />
+            <NavbarMenuItem menuName="About" />
+            <NavbarMenuItem menuName="Projects" />
+            <NavbarMenuItem menuName="Contact" />
           </div>
         </div>
       </div>
