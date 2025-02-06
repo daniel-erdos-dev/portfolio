@@ -4,7 +4,7 @@ import { RevealOnScroll } from "../../RevealOnScroll";
 
 export const Contact: React.FC = () => {
   const AWS_EMAIL_ENDPOINT =
-    "https://cirveoz7eg.execute-api.eu-north-1.amazonaws.com/prod/email";
+    "https://cirveoz7eg.execute-api.eu-north-1.amazonaws.com/prod/sendmail";
 
   const [formData, setFormData] = useState({
     name: "",
@@ -36,10 +36,7 @@ export const Contact: React.FC = () => {
       */
 
     fetch(
-      `${AWS_EMAIL_ENDPOINT}?name=${formData.name}&message=${formData.message}&email=${formData.email}`,
-      {
-        method: "POST",
-      }
+      `${AWS_EMAIL_ENDPOINT}?name=${formData.name}&message=${formData.message}&email=${formData.email}`
     )
       .then(() => {
         alert("message sent!");
