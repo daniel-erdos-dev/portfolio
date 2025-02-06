@@ -17,10 +17,10 @@ export const Contact: React.FC = () => {
     setMessageSendingInProgress(true);
     emailjs
       .sendForm(
-        import.meta.env.VITE_SERVICE_ID,
-        import.meta.env.VITE_TEMPLATE_ID,
+        process.env.VITE_SERVICE_ID as string,
+        process.env.VITE_TEMPLATE_ID as string,
         e.currentTarget,
-        import.meta.env.VITE_PUBLIC_KEY
+        process.env.VITE_PUBLIC_KEY as string
       )
       .then(() => {
         alert("message sent!");
