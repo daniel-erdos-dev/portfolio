@@ -1,8 +1,11 @@
 import { useState } from "react";
-import emailjs from "emailjs-com";
+//import emailjs from "emailjs-com";
 import { RevealOnScroll } from "../../RevealOnScroll";
 
 export const Contact: React.FC = () => {
+  const AWS_EMAIL_ENDPOINT =
+    "https://cirveoz7eg.execute-api.eu-north-1.amazonaws.com/prod/email";
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,6 +18,8 @@ export const Contact: React.FC = () => {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setMessageSendingInProgress(true);
+
+    /*
     emailjs
       .sendForm(
         process.env.VITE_SERVICE_ID as string,
@@ -22,6 +27,17 @@ export const Contact: React.FC = () => {
         e.currentTarget,
         process.env.VITE_PUBLIC_KEY as string
       )
+      .then(() => {
+        alert("message sent!");
+        setFormData({ name: "", email: "", message: "" });
+      })
+      .catch(() => alert("Oops! Something went wrong... Please try again!"))
+      .finally(() => setMessageSendingInProgress(false));
+      */
+
+    fetch(
+      `${AWS_EMAIL_ENDPOINT}?name=${formData.name}&message=${formData.message}&email=${formData.email}`
+    )
       .then(() => {
         alert("message sent!");
         setFormData({ name: "", email: "", message: "" });
