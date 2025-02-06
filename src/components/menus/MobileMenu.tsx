@@ -39,11 +39,23 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
         isMenuOpen={isMenuOpen}
         itemName="Projects"
       />
-      <MobileMenuItem
+      {/* <MobileMenuItem
         setIsMenuOpen={setIsMenuOpen}
         isMenuOpen={isMenuOpen}
         itemName="Contact"
-      />
+      /> */}
+      <a
+        href="mailto:daniel.erdos87@gmail.com?subject=Inquiry from portfolio site"
+        onClick={() => setIsMenuOpen(false)}
+        className={`text-5xl font-semibold text-white my-4 transform transition-transform duration-300
+                    ${
+                      isMenuOpen
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-5"
+                    }`}
+      >
+        &#9993;
+      </a>
     </div>
   );
 };

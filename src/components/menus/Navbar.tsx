@@ -30,7 +30,13 @@ export const Navbar: React.FC<NavbarProps> = ({
             <NavbarMenuItem menuName="Home" />
             <NavbarMenuItem menuName="About" />
             <NavbarMenuItem menuName="Projects" />
-            <NavbarMenuItem menuName="Contact" />
+            {/*<NavbarMenuItem menuName="Contact" />*/}
+            <a
+              href="mailto:daniel.erdos87@gmail.com?subject=Inquiry from portfolio site"
+              className="text-gray-300 text-4xl hover:text-white transition-colors mb-2"
+            >
+              &#9993;
+            </a>
           </div>
         </div>
       </div>

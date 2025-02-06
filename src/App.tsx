@@ -6,7 +6,6 @@ import { MobileMenu } from "./components/menus/MobileMenu";
 import { About } from "./components/sections/About/About";
 import { Home } from "./components/sections/Home/Home";
 import { Projects } from "./components/sections/Projects/Projects";
-import { Contact } from "./components/sections/Contact/Contact";
 
 export const App: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -25,7 +24,6 @@ export const App: React.FC = () => {
         <Home />
         <About />
         <Projects />
-        <Contact />
       </div>
     </>
   );
