@@ -1,10 +1,12 @@
-import { SetStateAction, useEffect } from "react";
+import { useEffect } from "react";
 import { NavbarMenuItem } from "./NavbarMenuItem";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { setIsMenuOpen } from "../../redux/reducers/menuReducer";
 
-export const Navbar: React.FC<NavbarProps> = ({
-  isMenuOpen,
-  setIsMenuOpen,
-}) => {
+export const Navbar: React.FC = () => {
+  const dispatch = useAppDispatch();
+  const isMenuOpen = useAppSelector((state) => state.menu.isOpen);
+
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
   }, [isMenuOpen]);
@@ -21,7 +23,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             className={`w-7 h-6 relative cursor-pointer text-2xl z-40 md:hidden ${
               isMenuOpen ? "opacity-0 transition-opacity" : ""
             }`}
-            onClick={() => setIsMenuOpen((prev) => !prev)}
+            onClick={() => {
+              const prevState = isMenuOpen;
+              dispatch(setIsMenuOpen(!prevState));
+            }}
           >
             &#9776;
           </div>
@@ -43,8 +48,3 @@ export const Navbar: React.FC<NavbarProps> = ({
     </nav>
   );
 };
-
-interface NavbarProps {
-  isMenuOpen: boolean;
-  setIsMenuOpen: React.Dispatch<SetStateAction<boolean>>;
-}

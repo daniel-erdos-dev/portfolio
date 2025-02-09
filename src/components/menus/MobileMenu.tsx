@@ -1,10 +1,11 @@
-import { SetStateAction } from "react";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { setIsMenuOpen } from "../../redux/reducers/menuReducer";
 import { MobileMenuItem } from "./MobileMenuItem";
 
-export const MobileMenu: React.FC<MobileMenuProps> = ({
-  isMenuOpen,
-  setIsMenuOpen,
-}) => {
+export const MobileMenu: React.FC = () => {
+  const isMenuOpen = useAppSelector((state) => state.menu.isOpen);
+  const dispatch = useAppDispatch();
+
   return (
     <div
       className={`fixed top-0 left-0 w-full bg-[rgba(10,10,10,0.8)]
@@ -17,36 +18,22 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
                      }`}
     >
       <button
-        onClick={() => setIsMenuOpen(false)}
+        onClick={() => dispatch(setIsMenuOpen(false))}
         className="absolute top-5 right-6 text-white text-3xl focus:outline-none cursor-pointer"
         aria-label="Close Menu"
       >
         &times;
       </button>
 
-      <MobileMenuItem
-        setIsMenuOpen={setIsMenuOpen}
-        isMenuOpen={isMenuOpen}
-        itemName="Home"
-      />
-      <MobileMenuItem
-        setIsMenuOpen={setIsMenuOpen}
-        isMenuOpen={isMenuOpen}
-        itemName="About"
-      />
-      <MobileMenuItem
-        setIsMenuOpen={setIsMenuOpen}
-        isMenuOpen={isMenuOpen}
-        itemName="Projects"
-      />
+      <MobileMenuItem itemName="Home" />
+      <MobileMenuItem itemName="About" />
+      <MobileMenuItem itemName="Projects" />
       {/* <MobileMenuItem
-        setIsMenuOpen={setIsMenuOpen}
-        isMenuOpen={isMenuOpen}
         itemName="Contact"
       /> */}
       <a
         href="mailto:daniel.erdos87@gmail.com?subject=Inquiry from portfolio site"
-        onClick={() => setIsMenuOpen(false)}
+        onClick={() => dispatch(setIsMenuOpen(false))}
         className={`text-5xl font-semibold text-white my-4 transform transition-transform duration-300
                     ${
                       isMenuOpen
@@ -59,8 +46,3 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
     </div>
   );
 };
-
-interface MobileMenuProps {
-  isMenuOpen: boolean;
-  setIsMenuOpen: React.Dispatch<SetStateAction<boolean>>;
-}

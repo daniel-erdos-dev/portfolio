@@ -1,14 +1,14 @@
-import { SetStateAction } from "react";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { setIsMenuOpen } from "../../redux/reducers/menuReducer";
 
-export const MobileMenuItem: React.FC<MobileMenuItemProps> = ({
-  setIsMenuOpen,
-  isMenuOpen,
-  itemName,
-}) => {
+export const MobileMenuItem: React.FC<MobileMenuItemProps> = ({ itemName }) => {
+  const dispatch = useAppDispatch();
+  const isMenuOpen = useAppSelector((state) => state.menu.isOpen);
+
   return (
     <a
       href={`#${itemName.toLowerCase()}`}
-      onClick={() => setIsMenuOpen(false)}
+      onClick={() => dispatch(setIsMenuOpen(false))}
       className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
                     ${
                       isMenuOpen
@@ -22,7 +22,5 @@ export const MobileMenuItem: React.FC<MobileMenuItemProps> = ({
 };
 
 interface MobileMenuItemProps {
-  isMenuOpen: boolean;
-  setIsMenuOpen: React.Dispatch<SetStateAction<boolean>>;
   itemName: string;
 }
