@@ -1,0 +1,45 @@
+export const frontendSkills = [
+  "React",
+  "TypeScript",
+  "Redux",
+  "NextJS",
+  "TailwindCSS",
+  "Material UI",
+  "HTML5",
+  "CSS3",
+  "JavaScript (ES6+)",
+  "Sass",
+  "Vue.js",
+  "Angular",
+];
+export const backendSkills = [
+  "ASP.NET",
+  "ASP.NET Core",
+  "NodeJS",
+  "Express",
+  "API Security",
+  "AWS",
+  "Azure",
+  "GraphQL",
+  "MongoDB",
+];
+export const otherSkills = [
+  "Unit Testing",
+  "UI Testing",
+  "Application Security",
+  "AI",
+  "Copilot",
+  "Github",
+  "Agile",
+  "Git",
+  "Jira",
+  "CI/CD",
+  "Bitbucket",
+  "Scrum",
+];
+export const languages = [
+  "Hungarian - native",
+  "English - fluent/professional",
+  "Spanish - conversational",
+  "Italian - understanding",
+];
