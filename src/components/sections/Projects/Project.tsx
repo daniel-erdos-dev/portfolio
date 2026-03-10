@@ -10,6 +10,8 @@ export const Project: React.FC<ProjectProps> = ({
     <a
       href={githubLink!}
       className="text-blue-400 hover:text-blue-300 transition-colors my-4"
+      target="_blank"
+      rel="noopener noreferrer"
     >
       View Project on Github -&gt;
     </a>
@@ -19,6 +21,8 @@ export const Project: React.FC<ProjectProps> = ({
     <a
       href={link!}
       className="text-blue-400 hover:text-blue-300 transition-colors my-4"
+      target="_blank"
+      rel="noopener noreferrer"
     >
       View Project -&gt;
     </a>
