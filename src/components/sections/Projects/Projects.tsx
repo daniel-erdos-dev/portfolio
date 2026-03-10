@@ -39,7 +39,7 @@ export const Projects: React.FC = () => {
               }
             />
             <Project
-              projectName="Appointment Manager"
+              projectName="Appointment Manager (in progress)"
               projectDesc="A full fledged appointment scheduling application that utilizes:"
               usedOutsideSources={[
                 "- Microservices hosted in AWS with separate DBs",
