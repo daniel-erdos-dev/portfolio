@@ -39,6 +39,38 @@ export const Projects: React.FC = () => {
               }
             />
             <Project
+              projectName="Appointment Manager"
+              projectDesc="A full fledged appointment scheduling application that utilizes:"
+              usedOutsideSources={[
+                "- Microservices hosted in AWS with separate DBs",
+                "- OAuth 2.0 for secure API access",
+                "- A full login, registration and user handling system",
+                "- Google for login and calendar integration",
+                "- SendGrid for sending email notifications",
+              ]}
+              usedTech={[
+                "React",
+                "NextJS",
+                "Typescript",
+                "Zustand",
+                "Tanstack Query",
+                ".NET Core",
+                "C#",
+                "MongoDB",
+                "AWS CloudFront",
+                "AWS S3",
+                "AWS Lambda",
+                "AWS API Gateway",
+                "OAuth 2.0",
+                "OpenID Connect",
+                "JSON Web Tokens (JWT)",
+                "Bcrypt",
+                "TailwindCSS",
+              ]}
+              githubLink={null}
+              link={"https://appointment-manager-frontend-dev.vercel.app/"}
+            />
+            <Project
               projectName="SightReadR"
               projectDesc="An application that helps practicing sightreading sheet music, by utilizing:"
               usedOutsideSources={[

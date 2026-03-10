@@ -4,7 +4,26 @@ export const Project: React.FC<ProjectProps> = ({
   usedOutsideSources,
   usedTech,
   githubLink,
+  link,
 }) => {
+  const githubLinkComponent = () => (
+    <a
+      href={githubLink!}
+      className="text-blue-400 hover:text-blue-300 transition-colors my-4"
+    >
+      View Project on Github -&gt;
+    </a>
+  );
+
+  const projectLinkComponent = () => (
+    <a
+      href={link!}
+      className="text-blue-400 hover:text-blue-300 transition-colors my-4"
+    >
+      View Project -&gt;
+    </a>
+  );
+
   return (
     <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59, 130, 246, 0.2)] transition">
       <h3 className="text-xl font-bold mb-2">{projectName}</h3>
@@ -26,14 +45,9 @@ export const Project: React.FC<ProjectProps> = ({
         ))}
       </div>
       <div className="flex justify-end items-center">
-        {githubLink ? (
-          <a
-            href="https://github.com/daniel-erdos-dev/recommend-to-watch"
-            className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-          >
-            View Project on Github -&gt;
-          </a>
-        ) : (
+        {githubLink && githubLinkComponent()}
+        {link && projectLinkComponent()}
+        {!githubLink && !link && (
           <p className="text-gray-400 my-4">
             Project is in early phase, link is coming soon!
           </p>
@@ -48,5 +62,6 @@ interface ProjectProps {
   projectDesc: string;
   usedOutsideSources: string[];
   usedTech: string[];
-  githubLink: string | null;
+  link?: string | null;
+  githubLink?: string | null;
 }
